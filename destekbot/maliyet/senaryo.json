@@ -1,0 +1,18 @@
+{
+  "_not": "Hafta 9 roi_hesapla.py girdisi. girdi/çıktı token ortalamalarını maliyet_tablosu.py ölçümünden güncelleyin; insan süreleri varsayımdır, README'de belirtin.",
+  "ad": "DestekBot — e-ticaret destek asistanı (iade talebi + temsilci onayı)",
+  "aciklama": "Asistan politika sorularını kaynaklı cevaplar, sipariş sorgular, iade talebi açar; onay temsilcide. Para etkisi olan işlem yapmaz.",
+  "gunluk_istek": 2000,
+  "ay_gun": 30,
+  "girdi_token_ort": 4000,
+  "cikti_token_ort": 200,
+  "onbellek_orani": 0.5,
+  "model": "gemini-3.5-flash-lite",
+  "insan": {"dakika_per_istek_once": 4, "dakika_per_istek_sonra": 1, "saatlik_maliyet_usd": 9},
+  "hata_orani": 0.1,
+  "hata_maliyeti_usd": 3,
+  "kurulum_maliyeti_usd": 5000,
+  "aylik_platform_usd": 0,
+  "aylik_bakim_saat": 10,
+  "bakim_saatlik_usd": 30
+}

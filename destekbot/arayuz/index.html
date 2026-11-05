@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulut Destek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/stil.css">
+</head>
+<body>
+  <header class="ust">
+    <a class="marka" href="/"><b>bulut</b><span>Müşteri desteği</span></a>
+    <div class="ust-sag">
+      <label for="musteri">Demo hesap</label>
+      <select id="musteri"></select>
+    </div>
+  </header>
+
+  <main class="duzen">
+    <aside class="raf" aria-labelledby="raf-baslik">
+      <h2 id="raf-baslik">Siparişlerin</h2>
+      <p>Bir siparişe dokun, numarası mesajına eklensin.</p>
+      <ul class="etiketler" id="siparisler"></ul>
+    </aside>
+
+    <section class="sohbet" aria-label="DestekBot ile sohbet">
+      <div class="akis" id="akis" aria-live="polite">
+        <div class="akis-ic" id="akis-ic">
+          <div class="karsilama" id="karsilama">
+            <h1>Siparişinle ilgili ne sormak istersin?</h1>
+            <p>Ben DestekBot, Bulut'un yapay zeka destek asistanıyım. Kargo, iade ve ödeme sorularını mağaza kurallarından cevaplarım ve hangi maddeye dayandığımı gösteririm. İade taleplerini ben açarım, onayı müşteri temsilcilerimiz verir.</p>
+            <div class="oneriler" id="oneriler"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yazma">
+        <form id="form">
+          <label for="mesaj" class="gizli">Mesajın</label>
+          <textarea id="mesaj" rows="1" maxlength="1000" placeholder="Örneğin: SIP-1001 nerede?"></textarea>
+          <button class="dugme" id="gonder" type="submit">Gönder</button>
+          <span class="sayac" id="sayac">0 / 1000</span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/musteri.js"></script>
+</body>
+</html>

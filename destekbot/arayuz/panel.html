@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulut Temsilci Paneli</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/stil.css">
+</head>
+<body>
+  <header class="ust">
+    <a class="marka" href="/panel"><b>bulut</b><span>Temsilci paneli</span></a>
+    <div class="ust-sag"><a href="/">Müşteri ekranı</a></div>
+  </header>
+
+  <main class="panel">
+    <aside class="kuyruk" aria-labelledby="kuyruk-baslik">
+      <h2 id="kuyruk-baslik">İade talepleri</h2>
+      <div class="sekmeler" role="group" aria-label="Duruma göre süz">
+        <button type="button" data-durum="onay_bekliyor" aria-pressed="true">Bekleyen</button>
+        <button type="button" data-durum="" aria-pressed="false">Tümü</button>
+      </div>
+      <ul class="etiketler" id="talepler"></ul>
+    </aside>
+
+    <section class="ayrinti" aria-live="polite">
+      <div class="ayrinti-ic">
+        <div id="ayrinti"><p class="bos">Soldan bir talep seç. Bot talebi açar ve politikaya uygunluğunu hesaplar; onay ya da ret kararını burada sen verirsin.</p></div>
+
+        <section class="olcum" aria-labelledby="olcum-baslik">
+          <h2 id="olcum-baslik">Son konuşmalar ve maliyet</h2>
+          <div class="sayilar" id="sayilar"></div>
+          <div class="tablo-kap"><table id="izler"></table></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/panel.js"></script>
+</body>
+</html>
