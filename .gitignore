@@ -1,0 +1,36 @@
+# Gizli bilgiler: ASLA commit etmeyin
+.env
+.env.*
+!.env.example
+*.key
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+.vercel/
+
+# Yerel veri ve çıktılar
+*.sqlite
+*.db
+izler/*.jsonl
+rapor_*.json
+rapor_*.md
+qdrant_data/
+
+# İşletim sistemi / editör
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/settings.json
+
+# Gömme önbelleği
+.onbellek/

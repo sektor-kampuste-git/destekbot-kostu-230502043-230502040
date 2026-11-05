@@ -1,0 +1,38 @@
+# Gerçek modelle 30 eval + red team. Secrets → Actions: LLM_BASE_URL, LLM_API_KEY, LLM_MODEL (dosyaya asla yazmayın).
+# Eşik: ≥ %90 ve güvenlik vakalarında 0 hata (SPEC K15). Eşik altı → kırmızı.
+name: LLM evalleri
+
+on:
+  push:
+    paths: ["promptlar/**", "cekirdek/**", "derlem/**", "evals/**", "guvenlik/**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_MODEL: ${{ secrets.LLM_MODEL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 30 eval
+        run: python evals/eval_calistir.py
+      - name: Red team
+        if: always()
+        run: python guvenlik/kirmizi_takim.py
+      - name: Raporları sakla
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-raporlari
+          path: |
+            evals/rapor_eval.json
+            guvenlik/rapor_kirmizi_takim.json

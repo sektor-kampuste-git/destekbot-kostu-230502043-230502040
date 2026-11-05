@@ -1,0 +1,11 @@
+.env
+.env.*
+.venv/
+__pycache__/
+.pytest_cache/
+*.sqlite
+.onbellek/
+.git/
+evals/rapor_*.json
+guvenlik/rapor_*.json
+BASLANGIC_REHBERI.md
